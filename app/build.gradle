@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
+    dataBinding{
+        enabled=true
+    }
     defaultConfig {
         applicationId "com.yktong.dogodgod"
         minSdkVersion 23
@@ -14,6 +17,10 @@ android {
 
         jackOptions {
             enabled true;
+        }
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
         }
     }
     buildTypes {
@@ -54,4 +61,10 @@ dependencies {
     // lite-orm
     compile files('libs/lite-orm-1.9.1.jar')
     compile 'it.sephiroth.android.library.picasso:picasso:2.5.2.4b'
+    //高德地图依赖
+    compile 'com.amap.api:3dmap:latest.integration'
+    compile 'com.amap.api:location:latest.integration'
+    compile 'com.amap.api:search:latest.integration'
+
+    compile project(':eileen')
 }
