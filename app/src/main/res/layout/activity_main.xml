@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,43 +13,76 @@
         android:layout_weight="1" />
 
     <RadioGroup
+        android:id="@+id/main_radio_group"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="首页" />
 
+        <!--首页-->
         <RadioButton
+            android:id="@+id/main_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="客户" />
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/drawable_main_button"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp" />
 
+        <!--营销-->
         <RadioButton
+            android:id="@+id/market_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="营销" />
+            android:layout_marginLeft="54dp"
+            android:background="@drawable/drawable_market_button"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingTop="8dp" />
 
+        <!--管理-->
         <RadioButton
+            android:id="@+id/manage_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="管理" />
+            android:layout_marginLeft="54dp"
+            android:background="@drawable/drawable_manage_button"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingTop="8dp" />
 
+        <!--客户-->
         <RadioButton
+            android:id="@+id/client_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="我" />
+            android:layout_marginLeft="54dp"
+            android:background="@drawable/drawable_client_button"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingTop="8dp" />
+
+        <!--我-->
+        <RadioButton
+            android:id="@+id/user_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="54dp"
+            android:background="@drawable/drawable_user_button"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingTop="8dp" />
     </RadioGroup>
 
 

@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="blue">#036eb8</color>
+    <color name="yellow_green">#8fc31f</color>
+    <color name="text_color">#333333</color>
+    <color name="secondary_text">#666666</color>
+    <color name="annotation">#999999</color>
+    <color name="division_line">#ededed</color>
+    <color name="dark_ling">#dadada</color>
+    <color name="content_split_gray">#f5f4f9</color>
+
 </resources>

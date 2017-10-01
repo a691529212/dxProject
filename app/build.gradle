@@ -49,9 +49,12 @@ dependencies {
     compile('com.facebook.fresco:fresco:0.9.0+') {
         exclude group: 'com.nineoldandroids'
     }
-    //Gson
+    // Gson
     compile 'com.google.code.gson:gson:2.8.0'
     // lite-orm
     compile files('libs/lite-orm-1.9.1.jar')
+    // picasso
     compile 'it.sephiroth.android.library.picasso:picasso:2.5.2.4b'
+    // Xposed module
+    provided fileTree(include: ['*.jar'], dir: 'lib')
 }
