@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">dogodgod</string>
+    <string name="title_activity_wel">WelActivity</string>
 </resources>

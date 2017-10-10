@@ -24,8 +24,6 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
-
-
     <application
         android:name=".base.MyApp"
         android:allowBackup="true"
@@ -35,21 +33,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--高德地图开始-->
+        <!-- 高德地图开始 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="102c6c15a04950981ba4cacb1db96443" />
 
         <service android:name="com.amap.api.location.APSService" />
-        <!--高德地图结束-->
+        <!-- 高德地图结束 -->
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.WelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.account.LoginActivity" />
+        <activity android:name=".activity.account.SignOnActivity"></activity>
     </application>
 
 </manifest>
