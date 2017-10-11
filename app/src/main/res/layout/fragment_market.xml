@@ -17,14 +17,10 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refresh_frame_layout"
         android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/main_title_tv">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_below="@+id/main_title_tv"
-            android:layout_alignParentStart="true">
+
 
             <ScrollView
                 android:id="@+id/scroll_market"
@@ -566,7 +562,6 @@
                     </RelativeLayout>
                 </LinearLayout>
             </ScrollView>
-        </FrameLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
 
 
