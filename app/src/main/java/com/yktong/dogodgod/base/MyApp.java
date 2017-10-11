@@ -8,6 +8,10 @@ import android.content.Context;
  */
 
 public class MyApp extends Application {
+    public static Context getmContext() {
+        return mContext;
+    }
+
     public static Context mContext;
 
     @Override

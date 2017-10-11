@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
@@ -10,10 +11,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-
-        jackOptions {
-            enabled true;
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
         }
     }
     buildTypes {
@@ -23,14 +22,19 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8;
-        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_8;
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -38,13 +42,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+
     // eventBus 依赖
-    compile 'org.greenrobot:eventbus:3.0.0'
     // okHttp3 依赖
-    compile 'com.squareup.okhttp3:okhttp:3.4.2'
     // fresco 依赖
     compile('com.facebook.fresco:fresco:0.9.0+') {
         exclude group: 'com.nineoldandroids'
@@ -57,4 +57,14 @@ dependencies {
     compile 'it.sephiroth.android.library.picasso:picasso:2.5.2.4b'
     // Xposed module
     provided fileTree(include: ['*.jar'], dir: 'lib')
+    //高德地图依赖
+    compile project(':eileen')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.2'
+    compile 'com.amap.api:3dmap:latest.integration'
+    compile 'com.amap.api:location:latest.integration'
+    compile 'com.amap.api:search:latest.integration'
+    testCompile 'junit:junit:4.12'
 }

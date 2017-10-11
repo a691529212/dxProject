@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         Log.d("MainActivity", "onCreate");
 //        FrameLayout frameLayout = bindView(R.id.activity_main_frame_layout);
-        RadioGroup radioGroup = bindView(R.id.main_radio_group);
+        RadioGroup radioGroup = (RadioGroup) bindView(R.id.main_radio_group);
 
         radioGroup.check(R.id.main_btn);
         fragmentManager = getSupportFragmentManager();
