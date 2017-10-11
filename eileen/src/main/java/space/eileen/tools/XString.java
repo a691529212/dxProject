@@ -23,6 +23,7 @@ public class XString {
      * @return
      */
     public static boolean isMobileNO(String phoneNum) {
+        if (phoneNum==null)return false;
         Pattern pattern = Pattern.compile("^[1][3,4,5,7,8][0-9]{9}$");
         Matcher matcher = pattern.matcher(phoneNum.trim().toString());
         return matcher.matches();

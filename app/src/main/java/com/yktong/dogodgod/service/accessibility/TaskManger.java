@@ -2,7 +2,7 @@ package com.yktong.dogodgod.service.accessibility;
 
 import android.util.Log;
 
-import com.yktong.dogodgod.bean.ToaskBaseBean;
+import com.yktong.dogodgod.bean.TaskBaseBean;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -34,7 +34,7 @@ public class TaskManger {
 
     public void doTask(int state) {
         if (!getRootAhth()) {
-            EventBus.getDefault().post(new ToaskBaseBean("未获取Root权限! "));
+            EventBus.getDefault().post(new TaskBaseBean("未获取Root权限! "));
             return;
         }
 

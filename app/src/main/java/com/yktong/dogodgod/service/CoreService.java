@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import com.yktong.dogodgod.base.MyApp;
-import com.yktong.dogodgod.bean.ToaskBaseBean;
+import com.yktong.dogodgod.bean.TaskBaseBean;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -28,7 +28,7 @@ public class CoreService extends Service {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void toastUtil(ToaskBaseBean bean) {
+    public void toastUtil(TaskBaseBean bean) {
         if (null != bean) {
             Toast toast = new Toast(MyApp.mContext);
             toast.setText(bean.getContent());

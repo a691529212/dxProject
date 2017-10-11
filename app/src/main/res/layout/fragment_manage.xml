@@ -1,7 +1,591 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#46b">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-</LinearLayout>
+    <data>
+
+        <variable
+            name="bean"
+            type="com.yktong.dogodgod.bean.view_bean.ManageFragmentViewBean" />
+
+        <variable
+            name="control"
+            type="com.yktong.dogodgod.fragment.ManageFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="管理"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="30dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_left_content">
+
+                            <TextView
+                                android:layout_width="0.5dp"
+                                android:layout_height="39dp"
+                                android:layout_centerInParent="true"
+                                android:background="#ececec" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="@{bean.chatCountTeamToDay}"
+                                        android:textColor="#ffffff"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="团队今日聊天+"
+                                        android:textColor="#ffffff"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="@{bean.callCountTeamToDay}"
+                                        android:textColor="#ffffff"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:maxLines="1"
+                                        android:text="团队今日电话+"
+                                        android:textColor="#ffffff"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_marginTop="23dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="77dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="38.5dp"
+                                    android:layout_alignParentTop="true"
+                                    android:background="@color/theme_blue" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="38.5dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@color/content_split_gray" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="77dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginLeft="@dimen/margin_left_content"
+                                    android:layout_marginRight="@dimen/margin_left_content"
+                                    android:background="@drawable/main_tab_shape"
+                                    android:gravity="center_vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="53dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:text="@{bean.fansCountTeamToDay}"
+                                            android:textColor="#036eb9"
+                                            android:textSize="18sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="4dp"
+                                            android:text="团队今日粉丝+"
+                                            android:textColor="#666666"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0.5dp"
+                                        android:layout_height="52dp"
+                                        android:background="@color/content_split_gray"></LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="53dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:text="@{bean.performanceCountTeamToDay}"
+                                            android:textColor="#036eb9"
+                                            android:textSize="18sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="4dp"
+                                            android:text="团队今日业绩+"
+                                            android:textColor="#666666"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0.5dp"
+                                        android:layout_height="52dp"
+                                        android:background="@color/content_split_gray"></LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="53dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:text="@{bean.visitationCountTeamToDay}"
+                                            android:textColor="#036eb9"
+                                            android:textSize="18sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="4dp"
+                                            android:text="团队今日拜访+"
+                                            android:textColor="#666666"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="15dp"
+                                android:background="@color/content_split_gray"
+                                android:orientation="vertical" />
+
+
+                            <LinearLayout
+                                android:background="@color/theme_white"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/list_button_height"
+                                    android:onClick="@{control.goWeChatManage}">
+
+                                    <LinearLayout
+                                        android:layout_width="25dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/gl_icon_fs" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content_split"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="18dp"
+                                            android:text="微信管理"
+                                            android:textColor="@color/text_black"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="团队微信粉丝总数统计，新增统计" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5sp"
+                                    android:layout_marginLeft="@dimen/margin_left_content"
+                                    android:layout_marginRight="@dimen/margin_left_content"
+                                    android:background="@color/division_line"
+                                    android:orientation="vertical" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/list_button_height"
+                                    android:onClick="@{control.goCallManage}"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="25dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/call_in" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content_split"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="18dp"
+                                            android:text="电话管理"
+                                            android:textColor="@color/text_black"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="通讯数据统计" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5sp"
+                                    android:layout_marginLeft="@dimen/margin_left_content"
+                                    android:layout_marginRight="@dimen/margin_left_content"
+                                    android:background="@color/division_line"
+                                    android:orientation="vertical" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/list_button_height"
+                                    android:onClick="@{control.goLBSManage}">
+
+                                    <LinearLayout
+                                        android:layout_width="25dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/icon_gj" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content_split"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="18dp"
+                                            android:text="轨迹管理"
+                                            android:textColor="@color/text_black"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="时时查看员工外出轨迹" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                                <!--分割线-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5sp"
+                                    android:layout_marginLeft="@dimen/margin_left_content"
+                                    android:layout_marginRight="@dimen/margin_left_content"
+                                    android:background="@color/division_line"
+                                    android:orientation="vertical" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/list_button_height"
+                                    android:onClick="@{control.goPerformanceManage}">
+
+                                    <LinearLayout
+                                        android:layout_width="25dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/gl_icon_yj" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content_split"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="18dp"
+                                            android:text="业绩管理"
+                                            android:textColor="@color/text_black"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="团队业绩管理" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5sp"
+                                    android:layout_marginLeft="@dimen/margin_left_content"
+                                    android:layout_marginRight="@dimen/margin_left_content"
+                                    android:background="@color/division_line"
+                                    android:orientation="vertical" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/list_button_height"
+                                    android:onClick="@{control.goMatterManage}">
+
+                                    <LinearLayout
+                                        android:layout_width="25dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/gl_icon_sc" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content_split"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="18dp"
+                                            android:text="素材管理"
+                                            android:textColor="@color/text_black"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="图文素材管理" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5sp"
+                                    android:layout_marginLeft="@dimen/margin_left_content"
+                                    android:layout_marginRight="@dimen/margin_left_content"
+                                    android:background="@color/division_line"
+                                    android:orientation="vertical" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/list_button_height"
+                                    android:onClick="@{control.goDataManage}">
+
+                                    <LinearLayout
+                                        android:layout_width="25dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/gl_icon_sj" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content_split"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="18dp"
+                                            android:text="数据管理"
+                                            android:textColor="@color/text_black"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="精准数据管理" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5sp"
+                                    android:layout_marginLeft="@dimen/margin_left_content"
+                                    android:layout_marginRight="@dimen/margin_left_content"
+                                    android:background="@color/division_line"
+                                    android:orientation="vertical"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/list_button_height"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:layout_width="25dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:src="@mipmap/gl_icon_dd" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/margin_left_content_split"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="18dp"
+                                            android:text="订单管理"
+                                            android:textColor="@color/text_black"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:text="个人订单添加" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                    </LinearLayout>
+                </ScrollView>
+            </FrameLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>
